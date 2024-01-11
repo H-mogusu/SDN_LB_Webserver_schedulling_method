@@ -1,0 +1,23 @@
+you need three VMs
+install dockerfile in the the VMs
+choose VM1 to be load balancer
+choose VM2 to be webserver 1
+choose VM3 to be webserver 2
+install appwedserver1.py in VM2 and appwebserver2.py in VM3
+Update the dockerfile to in the two VMs to read/capture the two python codes in each.
+
+install the other files into VM1 acting as loadbalancer.
+update dockerfile to the method you want to show or run 
+
+docker build -t nginx . all the threes VMs
+then
+
+Run all the three VMs
+
+docker run -p 8080:4000 nginx -vm1
+sudo docker run -p 8080:4000 -e "http://20.234.99.195:8081" nginx --for both vm2 and vm3. be sure to change the IP where necessary.
+
+OPen another terminal from VM1, use it as client 
+
+Using stressing tool to flood request to the loadbalancer and see the required response
+  
